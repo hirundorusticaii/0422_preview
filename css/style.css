@@ -1,1 +1,1 @@
-h1{color:#333;background:#c8f57a}@media screen and (min-width: 640px)and (max-width: 1280px){h1{background:#ffef76}}@media screen and (min-width: 0px)and (max-width: 639px){h1{color:red;background:#ffef76}}/*# sourceMappingURL=style.css.map */
+@import"https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap";.home{margin:0}.home .header{border:5px solid red}.home .main{border:5px solid green}.home .main .hero{border:3px solid blue}.home .footer{border:5px solid red}/*# sourceMappingURL=style.css.map */
