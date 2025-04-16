@@ -7,20 +7,28 @@
     padding: 10px 20px;
     @include mix.boxShadow(0.25);
 
+    @include mix.sp{
+        display: block;
+    }
+
     &__nav{
+        max-width: 880px;
+        width: 100%;
         ul{
             height: 120px;
             @include mix.flexbox;
+            justify-content: space-around;
             align-items: center;
             list-style: none;
 
             li{
-                padding-right: var.$pdSmall;
-                font-size: 24px;
+                font-size: clamp(18px,2vw,24px);
+                @include mix.sp{
+                    padding-right: 0;
+                }
 
                 &:last-child{
                     height: 60px;
-                    padding-right: 0;
                     padding: 0 54px;
                     line-height: 60px;
                     background: var.$mainGreen;

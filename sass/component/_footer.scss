@@ -10,6 +10,10 @@
         width: 1000px;
         margin: var.$mgMedium auto;
         justify-content: space-between;
+        @include mix.sp{
+            display: block;
+            width: 100%;
+        }
     }
     &__nav{
         ul{
@@ -36,5 +40,17 @@
     }
     &__copylight{
         text-align: center;
+    }
+}
+
+.arrow-button{
+    position: fixed;
+    z-index: 999;
+    bottom: var.$mgExtraSmall;
+    right: var.$mgExtraSmall;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+    img{
+        filter: drop-shadow(0px 6px 3px rgba(0, 0, 0, 0.2)); 
     }
 }

@@ -94,10 +94,17 @@
             &__content{
                 @include mix.flexbox;
                 margin-top: var.$pdExtraSmall;
+                @include mix.sp{
+                    display: block;
+                }
 
                 img{
                     margin-left: var.$pdExtraSmall;
                     @include mix.boxShadow(0.25);
+                    @include mix.sp{
+                        margin-left: 0;
+                        width: 100%;
+                    }
                 }
                 div{
                     h3{
