@@ -1,0 +1,15 @@
+@use 'base/variables' as var;
+@use 'base/mixin' as mix;
+
+h1{
+    color: var.$mainFont;
+    background: var.$mainGreen;
+
+    @include mix.tab {
+        background: var.$subYellow;
+    }
+    @include mix.sp {
+        color: red;                        
+        background: var.$subYellow;
+    }
+}
