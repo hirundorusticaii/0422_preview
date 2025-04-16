@@ -1,0 +1,40 @@
+@use '../base/variables' as var;
+@use '../base/mixin' as mix;
+
+.footer{
+    padding: 10px 20px var.$mgSmall 10px;
+    background: var.$mainGreen;
+    font-size: 20px;
+    &__menu{
+        @include mix.flexbox;
+        width: 1000px;
+        margin: var.$mgMedium auto;
+        justify-content: space-between;
+    }
+    &__nav{
+        ul{
+            height: 120px;
+            @include mix.flexbox;
+            align-items: center;
+            list-style: none;
+
+            li{
+                padding-right: var.$pdSmall;
+
+                &:last-child{
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+    &__address{
+        text-align: center;
+        margin-bottom: var.$mgExtraSmall;
+        p{
+            line-height: 2;
+        }
+    }
+    &__copylight{
+        text-align: center;
+    }
+}

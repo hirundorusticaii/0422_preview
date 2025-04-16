@@ -27,20 +27,42 @@
 }
 
 // Kosugi Maruフォントの呼び出し
-@mixin kosugir {
+@mixin kosugiR {
   font-family: "M PLUS Rounded 1c", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
-@mixin kosugib {
+@mixin kosugiB {
   font-family: "M PLUS Rounded 1c", sans-serif;
   font-weight: 700;
   font-style: normal;
 }
 
-@mixin kosugixb {
+@mixin kosugiXb {
   font-family: "M PLUS Rounded 1c", sans-serif;
   font-weight: 900;
   font-style: normal;
+}
+
+@mixin boxShadow($transparent) {
+  box-shadow: 0px 6px 0px 0px rgba(0, 0, 0, $transparent);
+}
+
+@mixin textShadow($transparent){
+  text-shadow: 0px 6px 0px rgba(0, 0, 0, $transparent);
+}
+
+@mixin sectionSpacing {
+  max-width: 1200px;
+  margin: var.$mgMedium auto 0;
+}
+
+@mixin outlineCharacter($line,$color){
+  content: attr(data-text);
+  position: absolute;
+  top: 0; left: 0;
+  z-index: -1;
+  color: $color;
+  -webkit-text-stroke: $line $color;
 }

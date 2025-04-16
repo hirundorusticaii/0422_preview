@@ -1,0 +1,17 @@
+@use '../base/variables' as var;
+
+// メインの見出し
+.containerHeader{
+    position: relative;
+    padding-left: calc( 10px + #{var.$pdExtraSmall} );
+    img{
+        position: absolute;
+        z-index: -1;
+        top: -30px;
+        left: -10px;
+    }
+    h2{
+        z-index: 1;
+        font-size: 40px;
+    }
+}

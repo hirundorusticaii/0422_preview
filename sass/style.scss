@@ -2,86 +2,277 @@
 @use 'base/mixin' as mix;
 @use 'component';
 
-// h1{
-//     color: var.$mainFont;
-//     background: var.$mainGreen;
-
-//     @include mix.tab {
-//         background: var.$subYellow;
-//     }
-//     @include mix.sp {
-//         color: red;                        
-//         background: var.$subYellow;
-//     }
-// }
-
 .home{
     margin: 0;
-    @include mix.kosugir;
+    color: var.$mainFont;
+    @include mix.kosugiR;
 
-    .header{
-        border: 5px solid red;
-        @include mix.flexbox;
-        justify-content: space-between;
-
-        &__nav{
-            ul{
-                @include mix.flexbox;
-            }
-        }
-    }
     .main{
-        border: 5px solid green;
+        margin-bottom: var.$mgMedium;
         .hero{
-            border: 3px solid blue;
+            position: relative;
             height: 500px;
             background-image: url(../img/hero.jpg);
+            background-position: center center;
             background-size: cover;
             background-repeat: no-repeat;
+
+            &__header{
+                padding: var.$mgSmall 0 0 var.$mgSmall;
+                p{
+                    color: var.$subWhite;
+                    font-size: 40px;
+                }
+
+                h2{
+                    position: relative;
+                    @include mix.kosugiXb;
+                    font-size: 80px;
+                    z-index: 1;
+                    &::before {
+                        @include mix.outlineCharacter(8px,white);
+                        @include mix.textShadow(0.25);                        
+                    }
+                }
+            }
+            &__deco-yellow{
+                position: absolute;
+                left: 45%;
+                top: 20px;
+            }
+            &__deco-white-small{
+                position: absolute;
+                left: 20px;
+                top: 50%;
+            }
+            &__deco-white-big{
+                position: absolute;
+                right: 20px;
+                top: 40%;
+            }
+            &__deco-green{
+                position: absolute;
+                right: 180px;
+                top: 70%;
+            }
         }
         .notice{
-            display: flex;
+            @include mix.flexbox;
+            @include mix.sectionSpacing;
             &__container{
                 width: 70%;
                 @include mix.flexbox;
+                border-left: 10px solid var.$mainGreen;
+            }
+            &__h2{
+                padding-left: var.$pdExtraSmall;
+                font-size: 40px;
+            }
+            &__article{
+                margin-left: var.$mgSmall;
+                font-size: 24px;
+                article{
+                    padding-bottom: var.$pdExtraSmall;
+                    p{
+                        display: inline-block;
+                        padding-left: var.$pdExtraSmall;
+                    }
+                }
             }
             &__btn{
                 width: 30%;
+                @include mix.flexbox;
+                justify-content: flex-end;
+                align-items: end;
                 .button{
                     background-color: var.$mainGreen;
                 }
             }
         }
         .about{
+            @include mix.sectionSpacing;
             &__content{
                 @include mix.flexbox;
+                margin-top: var.$pdExtraSmall;
+
+                img{
+                    margin-left: var.$pdExtraSmall;
+                    @include mix.boxShadow(0.25);
+                }
+                div{
+                    h3{
+                        position: relative;
+                        @include mix.kosugiR;
+                        color: var.$subWhite;
+                        font-size: 48px;
+                        z-index: 1;
+                        &::before {
+                            @include mix.outlineCharacter(4px,var.$mainFont);
+                            @include mix.textShadow(0.1);                    
+                        }
+                    }
+                    p{
+                        font-size: 24px;
+                        margin: var.$mgExtraSmall;
+                    }
+                }
+            }
+            &__content-header{
+                margin: 0 0 var.$pdExtraSmall var.$pdExtraSmall;
+            }
+            &__btn{
+                @include mix.flexbox;
+                justify-content: flex-end;
+                .button{
+                    background-color: var.$subYellow;
+                }
             }
         }
         .facility{
+            @include mix.sectionSpacing;
+            &__content{
+                margin-top: var.$pdExtraSmall;
+                div{
+                    &:last-child{
+                        margin: var.$mgExtraSmall 0 0 0;
+                    }
+                }
+            }
             &__img{
                 @include mix.flexbox;
+                justify-content: space-between;
+                gap: 15px;
+                margin: 0 var.$pdExtraSmall;
+
+                img{
+                    width: calc((100% - 30px) / 3);
+                    height: auto;
+                    object-fit: cover;
+                    @include mix.boxShadow(0.25);
+                }
+            }
+            h3{
+                position: relative;
+                @include mix.kosugiR;
+                margin-left: var.$pdExtraSmall;
+                color: var.$subWhite;
+                font-size: 48px;
+                z-index: 1;
+                &::before {
+                    @include mix.outlineCharacter(4px,var.$mainFont);
+                    @include mix.textShadow(0.1);                    
+                }
+            }
+            p{
+                font-size: 24px;
+                margin: var.$mgExtraSmall 0 var.$mgExtraSmall var.$pdExtraSmall;
+            }
+            &__btn{
+                @include mix.flexbox;
+                justify-content: flex-end;
+                .button{
+                    background-color: var.$subYellow;
+                }
             }
         }
         .event{
+            @include mix.sectionSpacing;
+            &__content{
+                margin-top: var.$pdExtraSmall;
+            }
             &__article{
                 @include mix.flexbox;
+                justify-content: space-between;
+                gap: 15px;
+                margin: 0 var.$pdExtraSmall;
+                article{
+                    width: calc((100% - 30px) / 3);
+                    height: auto;
+                    background: var.$mainGreen;
+                    @include mix.boxShadow(0.25);
+                    img{
+                        display: block;
+                        width: 80%;
+                        margin: var.$mgExtraSmall auto;
+                    }
+                    div{
+                        margin: var.$mgExtraSmall;
+                        h3{
+                            font-size: 24px;
+                            line-height: 2;
+                        }
+                        p{
+                            text-align: right
+                        }
+                    }
+                }
+            }
+            &__btn{
+                @include mix.flexbox;
+                justify-content: flex-end;
+                margin: var.$mgExtraSmall 0 0 0;
+                .button{
+                    background-color: var.$subYellow;
+                }
             }
         }
         .recruit{
+            position:relative;
+            @include mix.sectionSpacing;
             height: 180px;
             background-image: url(../img/admission.jpg);
+            background-position: center center;
             background-size: cover;
             background-repeat: no-repeat;
             &__content{
+                height: 180px;
                 @include mix.flexbox;
+                justify-content: center;
+                align-items: center;
+                p{
+                    font-size: 32px;
+                    color: var.$subWhite;
+                }
+                &>p{
+                    position: absolute;
+                    top: 20px;
+                    left: 200px;
+                }
                 div{
                     @include mix.flexbox;
                 }
             }
+            &__header{
+                p{
+                    align-self: center;
+                    font-size: 40px;
+                    &:last-child{
+                        position: relative;
+                        @include mix.kosugiB;
+                        margin-left: var.$pdExtraSmall;
+                        color: var.$mainFont;
+                        font-size: 64px;
+                        z-index: 1;
+                        &::before {
+                            @include mix.outlineCharacter(8px,var.$subWhite);
+                            @include mix.textShadow(0.25);                    
+                        }
+                        span{
+                            color: #e72d2d;
+                        }
+                    }
+                }
+            }
         }
-    }
-    .footer{
-        border: 5px solid red;
-        background: var.$mainGreen;
+        .contact{
+            @include mix.sectionSpacing;
+            &__btn{
+                @include mix.flexbox;
+                justify-content: center;
+                .large-button{
+                    background-color: var.$mainGreen;
+                }
+            }
+        }
     }
 }

@@ -1,0 +1,32 @@
+@use '../base/variables' as var;
+@use '../base/mixin' as mix;
+
+.header{
+    @include mix.flexbox;
+    justify-content: space-between;
+    padding: 10px 20px;
+    @include mix.boxShadow(0.25);
+
+    &__nav{
+        ul{
+            height: 120px;
+            @include mix.flexbox;
+            align-items: center;
+            list-style: none;
+
+            li{
+                padding-right: var.$pdSmall;
+                font-size: 24px;
+
+                &:last-child{
+                    height: 60px;
+                    padding-right: 0;
+                    padding: 0 54px;
+                    line-height: 60px;
+                    background: var.$mainGreen;
+                    border-radius: 30px;
+                }
+            }
+        }
+    }
+}
