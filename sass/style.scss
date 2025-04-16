@@ -1,5 +1,6 @@
 @use 'base/variables' as var;
 @use 'base/mixin' as mix;
+@use 'component';
 
 // h1{
 //     color: var.$mainFont;
@@ -16,20 +17,71 @@
 
 .home{
     margin: 0;
-    font-family: "M PLUS Rounded 1c", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+    @include mix.kosugir;
 
     .header{
         border: 5px solid red;
+        @include mix.flexbox;
+        justify-content: space-between;
+
+        &__nav{
+            ul{
+                @include mix.flexbox;
+            }
+        }
     }
     .main{
         border: 5px solid green;
         .hero{
             border: 3px solid blue;
+            height: 500px;
+            background-image: url(../img/hero.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .notice{
+            display: flex;
+            &__container{
+                width: 70%;
+                @include mix.flexbox;
+            }
+            &__btn{
+                width: 30%;
+                .button{
+                    background-color: var.$mainGreen;
+                }
+            }
+        }
+        .about{
+            &__content{
+                @include mix.flexbox;
+            }
+        }
+        .facility{
+            &__img{
+                @include mix.flexbox;
+            }
+        }
+        .event{
+            &__article{
+                @include mix.flexbox;
+            }
+        }
+        .recruit{
+            height: 180px;
+            background-image: url(../img/admission.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            &__content{
+                @include mix.flexbox;
+                div{
+                    @include mix.flexbox;
+                }
+            }
         }
     }
     .footer{
         border: 5px solid red;
+        background: var.$mainGreen;
     }
 }

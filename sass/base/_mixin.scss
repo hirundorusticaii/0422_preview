@@ -1,5 +1,6 @@
 @use 'variables' as var;
 
+//　メディアクエリの設定
 @mixin pc {
     @media (max-width: (var.$pc)) {
         @content;
@@ -14,4 +15,32 @@
     @media screen and (min-width: 0px) and (max-width: (var.$sp)) {
       @content;
     }
+}
+
+// flexboxの指定
+@mixin flexbox {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+// Kosugi Maruフォントの呼び出し
+@mixin kosugir {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin kosugib {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@mixin kosugixb {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 900;
+  font-style: normal;
 }
